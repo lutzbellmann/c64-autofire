@@ -8,7 +8,7 @@
 .dseg			; Data Segment
 speedA: .byte 1		; Autofire Speed Channel A
 speedB: .byte 1		; Autofire Speed Channel B
-sp_table: .byte 4	; Speed Table 8, 18, 36
+sp_table: .byte 4	; Speed Table
 
 .cseg
 .org	0x0000
