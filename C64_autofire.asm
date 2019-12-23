@@ -1,4 +1,7 @@
-;  C64 Autofire Adapter; Source Code V0.1
+;  C64 Autofire Adapter
+;  Version 1.0
+;  Attiny45 compatible source code
+;  (c) Dr. Lutz Bellmann
 
 .include "tn45def.inc"
 
