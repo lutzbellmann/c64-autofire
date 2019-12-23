@@ -1,0 +1,264 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "C64 Autofire Adapter"
+Date "2019-12-23"
+Rev "V1.0"
+Comp "Dr. Lutz Bellmann"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:DB9_Female J1
+U 1 1 5E00E797
+P 8750 5350
+F 0 "J1" H 8930 5396 50  0000 L CNN
+F 1 "DB9_Female; JoyA" H 8930 5305 50  0000 L CNN
+F 2 "" H 8750 5350 50  0001 C CNN
+F 3 " ~" H 8750 5350 50  0001 C CNN
+	1    8750 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DB9_Female J2
+U 1 1 5E011211
+P 8750 4000
+F 0 "J2" H 8930 4046 50  0000 L CNN
+F 1 "DB9_Female; JoyB" H 8930 3955 50  0000 L CNN
+F 2 "" H 8750 4000 50  0001 C CNN
+F 3 " ~" H 8750 4000 50  0001 C CNN
+	1    8750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DB9_Male J4
+U 1 1 5E011D13
+P 2700 4000
+F 0 "J4" H 2618 3308 50  0000 C CNN
+F 1 "DB9_Male; PORTB" H 2618 3399 50  0000 C CNN
+F 2 "" H 2700 4000 50  0001 C CNN
+F 3 " ~" H 2700 4000 50  0001 C CNN
+	1    2700 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:DB9_Male J3
+U 1 1 5E016B23
+P 2700 5350
+F 0 "J3" H 2618 4658 50  0000 C CNN
+F 1 "DB9_Male; PORTA" H 2618 4749 50  0000 C CNN
+F 2 "" H 2700 5350 50  0001 C CNN
+F 3 " ~" H 2700 5350 50  0001 C CNN
+	1    2700 5350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D_Zener D2
+U 1 1 5E0262B0
+P 3700 2250
+F 0 "D2" V 3654 2329 50  0000 L CNN
+F 1 "BZX85; 5,6V" V 3745 2329 50  0000 L CNN
+F 2 "" H 3700 2250 50  0001 C CNN
+F 3 "~" H 3700 2250 50  0001 C CNN
+	1    3700 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Zener D1
+U 1 1 5E02A527
+P 3150 2250
+F 0 "D1" V 3104 2329 50  0000 L CNN
+F 1 "BZX85; 5,6V" V 3195 2329 50  0000 L CNN
+F 2 "" H 3150 2250 50  0001 C CNN
+F 3 "~" H 3150 2250 50  0001 C CNN
+	1    3150 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L MCU_Microchip_ATtiny:ATtiny45-20PU U1
+U 1 1 5E044DEC
+P 5450 2650
+F 0 "U1" H 4921 2696 50  0000 R CNN
+F 1 "ATtiny45-20PU" H 4921 2605 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5450 2650 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 5450 2650 50  0001 C CNN
+	1    5450 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 2350 6600 2350
+Wire Wire Line
+	6600 2350 6600 1500
+Wire Wire Line
+	3700 1500 3700 2100
+Wire Wire Line
+	6050 2450 6800 2450
+Wire Wire Line
+	6800 2450 6800 1300
+Wire Wire Line
+	3150 1300 3150 2100
+Wire Wire Line
+	3000 3600 8450 3600
+Wire Wire Line
+	3000 3800 8450 3800
+Wire Wire Line
+	3000 4000 8450 4000
+Wire Wire Line
+	3000 4200 8450 4200
+Wire Wire Line
+	3000 4400 8450 4400
+Wire Wire Line
+	8450 4950 3000 4950
+Wire Wire Line
+	8450 5150 3000 5150
+Wire Wire Line
+	3000 5350 8450 5350
+Wire Wire Line
+	3000 5550 8450 5550
+Wire Wire Line
+	3000 5750 8450 5750
+Wire Wire Line
+	6600 1500 3700 1500
+Wire Wire Line
+	3150 2400 3150 5050
+Wire Wire Line
+	3700 2400 3700 3700
+Wire Wire Line
+	3700 3700 3000 3700
+Wire Wire Line
+	4300 3900 4300 1800
+Wire Wire Line
+	5450 1800 5450 2050
+Wire Wire Line
+	3000 4100 5450 4100
+Wire Wire Line
+	5450 4100 5450 3700
+Wire Wire Line
+	5450 4100 8450 4100
+Connection ~ 5450 4100
+Wire Wire Line
+	5450 5450 8450 5450
+Wire Wire Line
+	3000 5250 8450 5250
+Wire Wire Line
+	3000 5650 8450 5650
+Wire Wire Line
+	8450 4300 3000 4300
+Wire Wire Line
+	8450 3700 6800 3700
+Wire Wire Line
+	6800 3700 6800 2650
+Wire Wire Line
+	6800 2650 6050 2650
+Wire Wire Line
+	8450 5050 6600 5050
+Wire Wire Line
+	6600 5050 6600 4750
+Wire Wire Line
+	6600 2750 6050 2750
+Wire Wire Line
+	3000 5450 5450 5450
+Connection ~ 5450 5450
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5E067652
+P 7700 2150
+F 0 "SW2" H 7700 2435 50  0000 C CNN
+F 1 "SW_Push; PortB" H 7700 2344 50  0000 C CNN
+F 2 "" H 7700 2350 50  0001 C CNN
+F 3 "~" H 7700 2350 50  0001 C CNN
+	1    7700 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5E068664
+P 7700 2850
+F 0 "SW1" H 7700 3135 50  0000 C CNN
+F 1 "SW_Push; PortA" H 7700 3044 50  0000 C CNN
+F 2 "" H 7700 3050 50  0001 C CNN
+F 3 "~" H 7700 3050 50  0001 C CNN
+	1    7700 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 2850 7500 2850
+Wire Wire Line
+	7500 2150 7500 2550
+Wire Wire Line
+	7500 2550 6050 2550
+Wire Wire Line
+	7900 2850 7900 3300
+Wire Wire Line
+	7900 3300 5450 3300
+Connection ~ 5450 3300
+Wire Wire Line
+	5450 3300 5450 3250
+Wire Wire Line
+	7900 2150 8100 2150
+Wire Wire Line
+	8100 2150 8100 3450
+Wire Wire Line
+	8100 3450 5450 3450
+Connection ~ 5450 3450
+Wire Wire Line
+	5450 3450 5450 3300
+$Comp
+L Device:C C1
+U 1 1 5E06F4C3
+P 6000 4750
+F 0 "C1" V 5748 4750 50  0000 C CNN
+F 1 "15nF" V 5839 4750 50  0000 C CNN
+F 2 "" H 6038 4600 50  0001 C CNN
+F 3 "~" H 6000 4750 50  0001 C CNN
+	1    6000 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5E0707E6
+P 6000 3700
+F 0 "C2" V 5748 3700 50  0000 C CNN
+F 1 "15nF" V 5839 3700 50  0000 C CNN
+F 2 "" H 6038 3550 50  0001 C CNN
+F 3 "~" H 6000 3700 50  0001 C CNN
+	1    6000 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5450 3700 5850 3700
+Connection ~ 5450 3700
+Wire Wire Line
+	5450 3700 5450 3450
+Wire Wire Line
+	6150 3700 6800 3700
+Connection ~ 6800 3700
+Wire Wire Line
+	5450 4750 5850 4750
+Wire Wire Line
+	6150 4750 6600 4750
+Wire Wire Line
+	4300 1800 5450 1800
+Connection ~ 4300 3900
+Wire Wire Line
+	4300 3900 8450 3900
+Wire Wire Line
+	3000 3900 4300 3900
+Wire Wire Line
+	3150 5050 3000 5050
+Wire Wire Line
+	3150 1300 6800 1300
+Connection ~ 5450 4750
+Wire Wire Line
+	5450 4750 5450 5450
+Connection ~ 6600 4750
+Wire Wire Line
+	5450 4100 5450 4750
+Wire Wire Line
+	6600 2750 6600 4750
+$EndSCHEMATC
