@@ -46,8 +46,9 @@ You can flash the chip without compiling the assembly to binary by using the *.h
 To use AVR Dude in the directory with the hex file:
 sudo avrdude -p t45 -P (your interface) -c (your programmer) -B 1024 -U flash:w:C64_autofire.hex
 
-Then you have to burn the fuses with
-sudo $(AVRDUDE) -p t45 -P t45 -c (your interface) -B 1024 -U lfuse:w:0xe2:m -U hfuse:w:0x57:m
+Then you have to burn the fuses with:
+
+sudo $(AVRDUDE) -p t45 -P (your interface) -c (your programmer) -B 1024 -U lfuse:w:0xe2:m -U hfuse:w:0x57:m
 
 For "your interface" choose the interface your programmer is connected to. F.e. /dev/ttyACM0 or COM3.
 See detailed instructions for using AVRDUDE under https://linux.die.net/man/1/avrdude.
