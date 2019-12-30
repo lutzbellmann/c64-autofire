@@ -16,7 +16,7 @@ Dual Port, configurable Autofire Adapter for the C64 with any digital Joystick
 - autofire off on computer power-up (no more glitches due to forgotten Autofire switch ;-) )
 
 # Installation
-Schematics can be found in the respective folder. I will add a PCB layout, when I have time. Maybe, somebody can help.
+Schematics can be found in the respective folder. I added the PCB layout from KiCAD as well as the GERBER data. I am not proficient at this, so the GERBER data ma not be good enough for PCB manufacturing. Please check for yourself. Maybe, somebody can help.
 Parts list:
 - PCB
 - Attiny45
@@ -35,9 +35,22 @@ Flashing the Attiny:
 - to compile the *.asm file, install AVRA with "sudo apt install avra"
 - to flash using an STK500 or similar programmer, install AVRDUDE: "sudo apt install avrdude"
 
+There are in general two options for programming:
+1) - Use the Makefile to produce your own binaries and flash
 Fix your directories and programmer in the Makefile.
 To flash the chip and write the fuses, connect your programmer incl. Attiny and run:
 sudo make install
+
+2) - Use the HEX binaries included
+You can flash the chip without compiling the assembly to binary by using the *.hex file provided.
+To use AVR Dude in the directory with the hex file:
+sudo avrdude -p t45 -P (your interface) -c (your programmer) -B 1024 -U flash:w:C64_autofire.hex
+
+Then you have to burn the fuses with
+sudo $(AVRDUDE) -p t45 -P t45 -c (your interface) -B 1024 -U lfuse:w:0xe2:m -U hfuse:w:0x57:m
+
+For "your interface" choose the interface your programmer is connected to. F.e. /dev/ttyACM0 or COM3.
+See detailed instructions for using AVRDUDE under https://linux.die.net/man/1/avrdude.
 
 WARNING: check your circuit properly! Connection errors and short circuits could destroy your C64! No warranty is given for any usage
 of this Autofire adapter. Do not try it, if you are not knowing what you are doing. Usage at your own risk!
